@@ -1,0 +1,21 @@
+<div id="popup" aria-hidden="true" class="popup">
+	<div class="popup__wrapper">
+		<div class="popup__content">
+			<button data-close type="button" class="popup__close">X</button>
+			<div class="popup__body body-popup">
+				<h2 class="body-popup__title">Reserve a table</h2>
+				<form method="POST" action="files/sendmail/sendmail.php" class="body-popup__form form">
+					<div class="form__body">
+						<input data-required="name" autocomplete="off" type="text" name="name" placeholder="Name"
+							class="form__input input" required>
+						<input data-validate data-required="phone" autocomplete="off" type="text" name="phone"
+							data-error="Incorrect phone" placeholder="Phone" class="form__input input" required>
+						<input data-validate data-required="email" autocomplete="off" type="text" name="form"
+							data-error="Incorrect email" placeholder="E-mail" class="form__input input" required>
+							<button type="submit" class="form__button button">Send</button>
+						</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>

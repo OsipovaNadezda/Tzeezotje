@@ -1,0 +1,138 @@
+body::after {
+	content: "";
+	background-color: rgba(0, 0, 0, 0.5);
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	opacity: 0;
+	transition: opacity 0.8s ease 0s;
+	pointer-events: none;
+	z-index: 149;
+}
+.popup-show body::after {
+	opacity: 1;
+}
+.popup {
+	position: fixed;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	padding: 30px 10px;
+	transition: visibility 0.8s ease 0s;
+	visibility: hidden;
+	pointer-events: none;
+}
+.popup_show {
+	z-index: 150;
+	visibility: visible;
+	overflow: auto;
+	pointer-events: auto;
+}
+.popup_show .popup__content {
+	visibility: visible;
+	transform: scale(1);
+}
+.popup__wrapper {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	min-height: 100%;
+	flex: 1 1 auto;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.popup__content {
+	visibility: hidden;
+	transform: scale(0);
+	transition: transform 0.3s ease 0s;
+	background-color: #eee;
+	padding: 20px;
+	width: 100%;
+	max-width: 900px;
+	border-radius: 20px;
+
+	position: relative;
+	.lock & {
+		visibility: visible;
+	}
+}
+.popup__close{
+	position: absolute;
+	top:rem(25);
+	right: rem(25);
+	font-family: "Poppins";
+	font-size: rem(36);
+	color:#000;
+    margin-bottom: rem(10);
+}
+
+.body-popup__title{
+font-size: rem(36);
+color:#3A4574;
+text-align: center;
+@include adaptiveValue("padding-top", 50,30);
+
+}
+.form {
+	&__body {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items:center;
+		gap:rem(32);
+	
+		@include adaptiveValue("padding-top", 40,50);
+		@include adaptiveValue("padding-bottom", 50,25);
+		@media(max-width: $mobile){
+					width: 100%;
+		 }
+	}
+	&__input {
+		width: rem(350);
+		 height: rem(60);
+		 background: #FFFFFF;
+		 border: rem(1) solid #D9D9DE;
+		 padding-top: rem(11);
+		 padding-bottom: rem(12);
+		 padding-left: rem(14.3);
+ 
+		 &[placeholder]{
+			 line-height: 130%;
+			 color: #C4C4C4;
+		 }
+		 @media(max-width: $tablet) and (min-width: $mobile){
+			 width: rem(240);
+		  }
+		 @media(max-width: $mobile){
+			 width: 100%;
+		  }
+	 }
+	&__button {
+		font-weight: 500;
+        font-size:rem(18);
+        line-height:math.div(24,18);
+        display: inline-block;
+        padding: rem(20) rem(40) rem(20) rem(40);
+        background-color: #3A4574;
+        transition: all 0.3s ease 0s;
+        @media (any-hover: hover) {
+            &:hover {
+                background-color:#2d365f;
+            }
+        }
+        @media(max-width:$mobile){
+            margin-bottom: rem(25);
+         }
+	}
+}
+
+.input {
+}
+
+.button {
+}
