@@ -215,10 +215,14 @@
         display: flex;
         justify-content: space-between;
         align-items:center;
+        padding: 0;
     }
     &__wrap {
         min-width: 0;
-    }
+        flex: 1 1 auto;
+        justify-items: center;
+        align-items:center;
+       }
     &__arrow {
         display: flex;
         justify-content:center;
@@ -232,21 +236,21 @@
             height: 100%;
         }
         @media(max-width:$mobile){
-            width: rem(40);
-            height: rem(40);
+            width: rem(140);
+            height: rem(140);
         }
     }
     &__body {
         display: flex;
         justify-content: center;
         align-items: center;
-        width: rem(1030);
-
+        flex:1 1 auto;
+       // @include adaptiveValue("widht", 1030,290);
+width: 100%;
       }
 }
 
 .body-quote {
-    width: rem(1030);
     &__wrap{
         display: flex;
         flex-direction: column;
@@ -294,3 +298,6 @@
     }
 }
 
+.swiper-wrapper{
+    width:auto!important;
+  }
